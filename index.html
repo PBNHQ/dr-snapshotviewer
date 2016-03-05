@@ -108,6 +108,9 @@
             font-family: "Lato-Regular";
             padding: 12px 15px 0 0;
         }
+        .es-carousel ul{
+            display:block;
+        }
     </style>
 
     <body>
@@ -153,43 +156,48 @@
                     </div>
                 </div>
             </div>
-
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                <div id="rg-gallery" class="rg-gallery">
-                    <div class="rg-thumbs"></div>           
-                    <div class="es-carousel-wrapper">
-                        <div class="es-nav">
-                            <span class="es-nav-prev">Previous</span>
-                            <span class="es-nav-next">Next</span>
+            <br/>
+            <br/>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 text-center">
+                        <div id="rg-gallery" class="rg-gallery">
+                            <div class="rg-thumbs"></div>           
+                            <div class="es-carousel-wrapper">
+                                <div class="es-nav">
+                                    <span class="es-nav-prev">Previous</span>
+                                    <span class="es-nav-next">Next</span>
+                                </div>
+                                <div class="es-carousel">
+                                    <ul style="padding-left: 0px">
+                                        <script type="text/javascript">
+                        [$SNAPSHOTS$].forEach(function (snapshot) {
+                            document.write('<li><a href="' + snapshot + '"><img src="' + snapshot + '" data-large="' + snapshot + '" alt="$DOMAINNAME$" data-description="$DOMAINNAME$" /></a></li>');
+                        });
+                                        </script>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="es-carousel">
-                            <ul>
-                                <script type="text/javascript">
-                [$SNAPSHOTS$].forEach(function (snapshot) {
-                    document.write('<li><a href="' + snapshot + '"><img src="' + snapshot + '" data-large="' + snapshot + '" alt="$DOMAINNAME$" data-description="$DOMAINNAME$" /></a></li>');
-                });
-                                </script>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
-                    <div class="rg-image-wrapper">
-                            {{if itemsCount > 1}}
-                                    <div class="rg-image-nav">
-                                            <a href="#" class="rg-image-nav-prev">Previous Image</a>
-                                            <a href="#" class="rg-image-nav-next">Next Image</a>
-                                    </div>
-                            {{/if}}
-                            <div class="rg-image"></div>
-                            <div class="rg-loading"></div>
-                            <div class="rg-caption-wrapper">
-                                    <div class="rg-caption" style="display:none;">
-                                            <p></p>
+                        <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+                            <div class="rg-image-wrapper">
+                                    {{if itemsCount > 1}}
+                                            <div class="rg-image-nav">
+                                                    <a href="#" class="rg-image-nav-prev">Previous Image</a>
+                                                    <a href="#" class="rg-image-nav-next">Next Image</a>
+                                            </div>
+                                    {{/if}}
+                                    <div class="rg-image"></div>
+                                    <div class="rg-loading"></div>
+                                    <div class="rg-caption-wrapper">
+                                            <div class="rg-caption" style="display:none;">
+                                                    <p></p>
+                                            </div>
                                     </div>
                             </div>
+                         </script>                
                     </div>
-                 </script>                
+                </div>
             </div>
         </div>
         <div id="metrix" >
