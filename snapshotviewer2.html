@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <meta charset="utf-8">
+        <title>$DOMAINNAME$</title>
+        <meta name="generator" content="Bootply">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="One page style template with smooth scrolling, fixed background images, multiple centered sections.">
+        <link rel="stylesheet" type="text/css" href="http://xupypr.com/xups/dr/css/demo.css" />
+        <link rel="stylesheet" type="text/css" href="http://xupypr.com/xups/dr/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://xupypr.com/xups/dr/css/elastislide.css" />
+        <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link href="http://mistic100.github.io/jQCloud/dist/jqcloud2/dist/jqcloud.min.css" rel="stylesheet">
+
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+		
+        <!-- Gallery BEGIN -->
+            <noscript>
+                    <style>
+                            .es-carousel ul{
+                                    display:block;
+                            }
+                    </style>
+            </noscript>
+            <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+            <div class="rg-image-wrapper">
+                    {{if itemsCount > 1}}
+                            <div class="rg-image-nav">
+                                    <a href="#" class="rg-image-nav-prev">Previous Image</a>
+                                    <a href="#" class="rg-image-nav-next">Next Image</a>
+                            </div>
+                    {{/if}}
+                    <div class="rg-image"></div>
+                    <div class="rg-loading"></div>
+                    <div class="rg-caption-wrapper">
+                            <div class="rg-caption" style="display:none;">
+                                    <p></p>
+                            </div>
+                    </div>
+            </div>
+         </script>
+        <!-- Gallery END -->
+             
+        <!-- CSS code from Bootply.com editor -->
+        
+        <style type="text/css">
+            /* -- custom css for Bootstrap 3.x --*/
+
+/* move special fonts to HTML head for better performance */
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600');
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family:'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+/* fix bs3 horizontal scrollbar bug */
+.row { margin: 0; padding: 0 }
+
+h1 {
+  font-size:45px; 
+}
+
+img.grayscale {
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+}
+
+.icon-bar {
+   background-color:#fff;
+}
+
+.scroll-down a, .scroll-top a {
+   color:#ffffff;
+}
+
+.scroll-down {
+   position:fixed;
+   bottom:20%;
+   right:0%;
+   color:#f9f9f9;
+}
+
+.scroll-top {
+  background-color:#33ee67;
+}
+
+.header .btn-lg {
+   font-size:28px;
+   border-color:#eeeeee;
+   padding:15px;
+   background-color:transparent;
+   color:#ffffff;
+}
+
+.header .btn-lg:hover {
+   background-color:#eeeeee;
+   color:#777777;
+}
+
+.navbar a {
+  color:#fff;
+}
+
+.navbar-bold.affix {
+  background-color:#33ee67;
+}
+
+.navbar-bold {
+  background-color:#11cc45;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.navbar-bold li a:hover, .navbar-bold li.active {
+  background-color:#22dd56;
+}
+
+.vert {
+  vertical-align: middle;
+  width:100%;
+  padding-top:4%;
+}
+
+.header h1 {
+  font-size:110px;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+  color:#431a6d;
+  color:#fff;
+  margin-left:-5px;
+  margin-bottom:5px;
+  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+.header .lead {
+  color:#eeeeee;
+  font-size:25px;
+}
+
+.header {
+  height: 10%;
+  background: #11cc45 url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
+}
+
+.blurb {
+  padding: 50px 0;
+  background-color:#fefefe;
+}
+
+.blurb .panel {
+  background-color:transparent;
+}
+
+.bright {
+  background: #7fbbda url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
+  color:#fff;
+}
+
+.featurette {
+  background: #545455;
+  padding: 50px 0;
+  color: #ffffff;
+}
+
+.featurette-item {
+  margin-bottom: 15px;
+}
+
+.featurette-item > i {
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  font-size: 56px;
+  width: 140px;
+  height: 140px;
+  line-height: 136px;
+  vertical-align: middle; 
+  text-align: center;
+}
+
+.featurette-item > i:hover {
+  font-size: 68px;
+}
+
+.gallery {
+  padding: 50px 0;
+}
+
+.call-to-action {
+  background: #eeeeee;
+  padding: 50px 0;
+}
+
+.call-to-action .btn {
+  margin: 10px;
+}
+
+.rubber-image {
+    max-width: 100%;
+}
+/* -- end custom css for Bootstrap 3.x --*/
+        </style>
+    </head>
+<body>        
+        
+<div class="navbar navbar-fixed-top navbar-bold affix-top" data-spy="affix" data-offset-top="1000">
+  <div class="container">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">$DOMAINNAME$</a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#sec1">Snapshots</a></li>
+        <li><a href="#sec2">Metrics</a></li>
+        <li><a href="#sec3">BackLinks and WayBacks</a></li>
+        <li><a href="#sec4">Other</a></li>
+      </ul>
+    </div>
+   </div>
+</div>
+
+<div id="sec1" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1> Snapshots </h1>
+        <div>            
+            <span class="label label-warning"><span class="label">Trust Flow :</span> <span class="metrics">$TF$</span></span>            
+            <span class="label label-info"><span class="label">Citation Flow :</span> <span class="metrics">$CF$</span></span>            
+            <span class="label label-primary"><span class="label">Domain Authority :</span> <span class="metrics">$DA$</span></span>            
+            <span class="label label-info"><span class="label">Page Authority :</span> <span class="metrics">$PA$</span></span>            
+            <span class="label label-success"><span class="label">Root Domains :</span> <span class="metrics">$RD$</span></span>            
+            <span class="label label-info"><span class="label">Backlinks :</span> <span class="metrics">$EBL$</span></span>            
+        </div>
+        <div class="content">
+            <div id="rg-gallery" class="rg-gallery">
+                <div class="rg-thumbs"></div>           
+                <div class="es-carousel-wrapper">
+                    <div class="es-nav">
+                        <span class="es-nav-prev">Previous</span>
+                        <span class="es-nav-next">Next</span>
+                    </div>
+                    <div class="es-carousel">
+                        <ul>
+                            <script type="text/javascript">
+                                [$SNAPSHOTS$].forEach(function(snapshot) {
+                                    document.write('<li><a href="'+snapshot+'"><img src="'+snapshot+'" data-large="'+snapshot+'" alt="$DOMAINNAME$" data-description="$DOMAINNAME$" /></a></li>');
+                                });
+                            </script>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec2" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h1> Metrics </h1>
+            <div class="circleStats">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="circleStatsItem red">
+                                <i class="">TF</i>
+                                <input type="text" value="$TF$" class="orangeCircle" />
+                        </div>
+                        <strong>Trust Flow</strong>
+                    </div>
+                    <div class="col-sm-6">	
+                        <div class="circleStatsItem red">
+                                        <i class="">CF</i>
+                                        <input type="text" value="$CF$" class="orangeCircle" />
+                        </div>
+                        <strong>Citation Flow</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="circleStatsItem blue">
+                                <i class="">DA</i>
+                                <input type="text" value="$DA$" class="blueCircle" />
+                        </div>
+                        <strong>Domain Authority</strong>
+                    </div>
+                    <div class="col-sm-6">	
+                        <div class="circleStatsItem blue">
+                                <i class="">PA</i>
+                                <input type="text" value="$PA$" class="blueCircle" />
+                        </div>
+                        <strong>Page Authority</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="circleStatsItem green">
+                                <i class="">LRD</i>
+                                <input type="text" value="$RD$" class="greenCircle" />
+                        </div>
+                        <strong>Root Domains</strong>
+                    </div>
+                    <div class="col-sm-6">	
+                        <div class="circleStatsItem green">
+                                <i class="">BL</i>
+                                <input type="text" value="$EBL$" class="greenCircle" />
+                        </div>
+                        <strong>Backlinks</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/linkprofile/3/?threshold=&amp;target=$STRONGEST$&amp;datatype=0&amp;IndexDataSource=F&amp;wildcard=1" />
+                        </div>
+                        <strong>Backlink Profile</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/backlinks-discovery-chart?d=$STRONGEST$&amp;se=1&amp;w=1000&amp;h=250&amp;t=l&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
+                        </div>
+                        <strong>Backlinks 90 Days</strong>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div>
+                            <img alt="Backlink Profile" class="rubber-image" src="https://majestic.com/charts/referring-domains-discovery-chart?d=$STRONGEST$&amp;se=1&amp;w=1000&amp;h=250&amp;t=rd&amp;ctype=0&amp;bc=EAEEF0&amp;IndexDataSource=F&amp;wildcard=1" />
+                        </div>
+                        <strong>Referring Domains 90 Days</strong>
+                    </div>
+                </div>                
+           </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec3" class="blurb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>BackLinks</h1> 
+        <div id="linksCloud" style="height:300px; width:100%"></div>
+        <h1>WayBacks</h1>
+        <ul>
+            <script type="text/javascript">
+                var titles = '$TITLES$'.split(/,/);
+                titles.forEach(function(title) {
+                    document.write('<li>'+title+'</li>');
+                });
+            </script>
+        </ul>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="sec4" class="container blurb">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3 text-center">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i><span id="likes" ></span></li>
+          <li><i class="icon-google-plus icon-2x"></i><span id="plusones" ></span></li>
+          <li><i class="icon-pinterest icon-2x"></i><span id="pins" ></span></li>
+          <li><i class="icon-linkedin-sign icon-2x"></i><span id="lins" ></span></li>
+        </ul>
+        <hr>
+        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a>.<br>PBNHQ ©2016</p>
+      </div>
+    </div>
+</div>
+
+<ul class="nav pull-right scroll-down">
+  <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
+</ul>
+<ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="icon-chevron-up icon-3x"></i></a></li>
+</ul>
+
+        
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://xupypr.com/xups/dr/js/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="http://xupypr.com/xups/dr/js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="http://xupypr.com/xups/dr/js/jquery.elastislide.js"></script>
+    <script type="text/javascript" src="http://xupypr.com/xups/dr/js/gallery.js"></script>
+    <script src="http://www.pbnhq.com/ronin/js/jquery.knob.modified.min.js"></script>
+    <script src="http://mistic100.github.io/jQCloud/dist/jqcloud2/dist/jqcloud.min.js"></script>
+    
+        <!-- JavaScript jQuery code from Bootply.com editor  -->
+        
+        <script type="text/javascript">
+        
+        $(document).ready(function() {
+        
+            /* smooth scrolling for scroll to top */
+            $('.scroll-top').click(function(){
+              $('body,html').animate({scrollTop:0},1000);
+            })
+            /* smooth scrolling for scroll down */
+            $('.scroll-down').click(function(){
+              $('body,html').animate({scrollTop:$(window).scrollTop()+800},1000);
+            })
+
+            /* highlight the top nav as scrolling occurs */
+            $('body').scrollspy({ target: '#navbar' })
+
+            $(".greenCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#b9e672',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });
+
+	    $(".orangeCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#FA5833',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });
+
+		$(".lightOrangeCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#f4a70c',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });
+
+	    $(".blueCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#2FABE9',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });
+
+		$(".yellowCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#e7e572',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });
+
+		$(".pinkCircle").knob({
+	        'min':0,
+	        'max':100,
+	        'readOnly': true,
+	        'width': 120,
+	        'height': 120,
+	        'fgColor': '#e42b75',
+	        'dynamicDraw': true,
+	        'thickness': 0.2,
+	        'tickColorizeValues': true,
+			'skin':'tron'
+	    });        
+
+            var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
+            var cloudSource = [];
+            words.forEach(function (word) {
+                var f = false;
+                cloudSource.forEach(function (cloudElement) {
+                    if (word === cloudElement.text) {
+                        cloudElement.weight++;
+                        f = true;
+                    }
+                });
+                if (!f) {
+                    cloudSource.push({text:word, weight:1});
+                }
+            });            
+            $("#linksCloud").jQCloud(cloudSource, {
+                fontSize: {from:0.09, to:0.04},
+                autoResize: true
+            });
+            
+            $.sharedCount = function(url, fn) {
+                url = encodeURIComponent(url || location.href);
+                var domain = "http://free.sharedcount.com/"; /* SET DOMAIN */
+                var apikey = "030104400aace8bdd6cd3970a78b6f845a791d3e" /*API KEY HERE*/
+                var arg = {
+                  data: {
+                    url : url,
+                    apikey : apikey
+                  },
+                    url: domain,
+                    cache: true,
+                    dataType: "json"
+                };
+                if ('withCredentials' in new XMLHttpRequest) {
+                    arg.success = fn;
+                }
+                else {
+                    var cb = "sc_" + url.replace(/\W/g, '');
+                    window[cb] = fn;
+                    arg.jsonpCallback = cb;
+                    arg.dataType += "p";
+                }
+                return jQuery.ajax(arg);
+            };
+            
+            $.sharedCount("http://www.$DOMAINNAME$", function(data){
+//                $("#tweets").text(data.Twitter);   
+                $("#pins").text(data.Pinterest);   
+                $("#lins").text(data.LinkedIn);   
+                $("#likes").text(data.Facebook.like_count);
+                $("#plusones").text(data.GooglePlusOne);
+//                $("#sharedcount").fadeIn();
+            });
+            
+            $(".metrics").each(function () {
+               var val = $(this); 
+               if (val.text()==='') {
+                   val.parent().hide();
+               }
+            });
+        });
+        
+        </script>  
+</body>
+</html>
