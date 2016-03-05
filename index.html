@@ -173,6 +173,23 @@
                         </div>
                     </div>
                 </div>
+                <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+                    <div class="rg-image-wrapper">
+                            {{if itemsCount > 1}}
+                                    <div class="rg-image-nav">
+                                            <a href="#" class="rg-image-nav-prev">Previous Image</a>
+                                            <a href="#" class="rg-image-nav-next">Next Image</a>
+                                    </div>
+                            {{/if}}
+                            <div class="rg-image"></div>
+                            <div class="rg-loading"></div>
+                            <div class="rg-caption-wrapper">
+                                    <div class="rg-caption" style="display:none;">
+                                            <p></p>
+                                    </div>
+                            </div>
+                    </div>
+                 </script>                
             </div>
         </div>
         <div id="metrix" >
@@ -268,16 +285,20 @@
                             <h1>BackLinks</h1>
 
                             <div class="b-links">
-                                <p>   <font class="sader">club </font>    &nbsp;&nbsp;  manual &nbsp;&nbsp;      <span class="sader">airport</span> 
-                                    the
-                                    <font class="sader">&nbsp;&nbsp;flying&nbsp;&nbsp;</font>     training     
-                                    <font class="sader">&nbsp;&nbsp;at&nbsp;&nbsp;</font>    westair
-                                    <span class="sader">&nbsp;&nbsp;flight&nbsp;&nbsp;</span>      <font>carp</font>     
-                                    <font class="sader">&nbsp;&nbsp;pilot&nbsp;&nbsp;</font>       
-                                    ottawa     <span class="sader">&nbsp;&nbsp;schools&nbsp;&nbsp;</span>   <font> aviation </font>
-                                    <font class="sader"> &nbsp;&nbsp;polo&nbsp;&nbsp;</font>       <font>aviation</font>
-
-
+                                <p>
+                                    <script type="text/javascript">
+                                        var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
+                                        words.forEach(function (word) {
+                                            var rand = Math.floor(Math.random() * 4);
+                                            if (rand == 0) { 
+                                                document.write(word);
+                                            } else if (rand == 1)  { 
+                                                document.write('<font class="sader">' + word + '</font>');
+                                            } else { 
+                                                document.write('<span class="sader">' + word + '</span>');
+                                            }
+                                        });
+                                    </script>
                                 </p>
                             </div>
                         </div>
