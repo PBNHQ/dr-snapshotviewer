@@ -85,5 +85,14 @@ $(document).ready(function(){
             'tickColorizeValues': true,
                     'skin':'tron'
         });
+        
+        $.fn.tagcloud.defaults = {
+            size: {start: 8, end: 12, unit: 'pt'},
+            color: {start: '#cde', end: '#f52'}
+        };
+
+        $(function () {
+            $('.b-links p').tagcloud();
+        });
     }	
 });
