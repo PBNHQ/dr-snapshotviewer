@@ -74,8 +74,6 @@
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.elastislide.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/gallery.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.tagcloud.js"></script>
-        <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/index.js"></script>
-
     </head>
 
     <style>
@@ -104,8 +102,9 @@
         }
         li.lin_a {
             text-shadow: none;
-            color: #000;
+            color: #fff;
             font-size: 18px;
+            font-weight: bold;
             font-family: "Lato-Regular";
             padding: 12px 15px 0 0;
         }
@@ -116,7 +115,11 @@
             margin: auto;
             text-align: center;
         }
+        .firstparagraph {            
+            padding: 50px 0;
+        }
         .paragraph {            
+            margin: -30px 0;
             padding: 50px 0;
         }
     </style>
@@ -149,7 +152,7 @@
         </nav>
 
         <div id="snap">
-            <div class="paragraph">
+            <div class="firstparagraph">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 text-center">
@@ -225,7 +228,7 @@
                                     <div class="circleStatsItem red">
                                         <i class="fa  fa-thumbs-up"></i>
 
-                                        <input type="text" value="$TF$" class="orangeCircle" />
+                                        <input type="text" value="$TF$" class="orangeCircleTF" />
                                     </div>
                                     <div class="trst-lag"><h3>Trust Flow</h3></div>
                                 </div>
@@ -236,7 +239,7 @@
                                     <div class="circleStatsItem red">
                                         <i class="fa  fa-thumbs-up"></i>
 
-                                        <input type="text" value="$DA$" class="orangeCircle" />
+                                        <input type="text" value="$DA$" class="orangeCircleDA" />
                                     </div>
                                     <div class="trst-lag"><h3>Domain Authority</h3></div>
                                 </div>
@@ -247,7 +250,7 @@
                                     <div class="circleStatsItem red">
                                         <i class="fa  fa-thumbs-up"></i>
 
-                                        <input type="text" value="$RD$" class="orangeCircle" />
+                                        <input type="text" value="$RD$" class="orangeCircleRD" />
                                     </div>
                                     <div class="trst-lag"><h3>Root Domains</h3></div>
                                 </div>
@@ -259,7 +262,7 @@
                                     <div class="circleStatsItem pink">
                                         <i class="fa  fa-globe"></i>
 
-                                        <input type="text" value="$CF$" class="pinkCircle" />
+                                        <input type="text" value="$CF$" class="pinkCircleCF" />
                                     </div>
                                     <div class="trst-lag-second"><h3>Citation Flow</h3></div>
                                 </div>
@@ -270,7 +273,7 @@
                                     <div class="circleStatsItem pink">
                                         <i class="fa  fa-globe"></i>
 
-                                        <input type="text" value="$PA$" class="pinkCircle" />
+                                        <input type="text" value="$PA$" class="pinkCirclePA" />
                                     </div>
                                     <div class="trst-lag-second"><h3>Page Authority</h3></div>
                                 </div>
@@ -281,7 +284,7 @@
                                     <div class="circleStatsItem grey">
                                         <i class="fa  fa-globe"></i>
 
-                                        <input type="text" value="$EBL$" class="pinkCircle" />
+                                        <input type="text" value="$EBL$" class="pinkCircleEBL" />
                                     </div>
                                     <div class="trst-lag-second"><h3>Backlinks</h3></div>
                                 </div>
@@ -390,7 +393,7 @@
             </section>
         </div>
 
-        <footer>
+        <footer style="margin: 0 0 0 0;">
             <div class="socila-icones">
 
                 <p class="bootply">Built with  at <font>Bootply</font>. PBNHQ ©2016</p>
@@ -398,43 +401,150 @@
                 <div class="top"><a  id="link"><img src="http://pbnhq.github.io/dr-snapshotviewer/images/arrow-top.png" class="arrow-top" /><br/>TOP</a></div>
             </div>
         </footer>
+        
+        <footer class="site-footer" style="margin: 0 0 0 0;">
+            <img src="https://www.domainronin.com/wp-content/uploads/2015/04/domain-ronin-icon.png" height="25px" width="25px" />
+            Report generated with <b><a hred="http://www.domainronin.com">Domain Ronin</a></b>
+        </footer>
 
         <script type="text/javascript">
-            $('#link').click(function () {
-                $("html, body").animate({scrollTop: 0}, 600);
-                return false;
-            });
+$(document).ready(function(){
+	
+    /* ---------- Circle Progess Bars ---------- */
+    var divElement = $('div'); //log all div elements
 
-            $.sharedCount = function (url, fn) {
-                url = encodeURIComponent(url || location.href);
-                var domain = "http://free.sharedcount.com/"; /* SET DOMAIN */
-                var apikey = "030104400aace8bdd6cd3970a78b6f845a791d3e" /*API KEY HERE*/
-                var arg = {
-                    data: {
-                        url: url,
-                        apikey: apikey
-                    },
-                    url: domain,
-                    cache: true,
-                    dataType: "json"
-                };
-                if ('withCredentials' in new XMLHttpRequest) {
-                    arg.success = fn;
-                } else {
-                    var cb = "sc_" + url.replace(/\W/g, '');
-                    window[cb] = fn;
-                    arg.jsonpCallback = cb;
-                    arg.dataType += "p";
-                }
-                return jQuery.ajax(arg);
+    if ($.browser.msie  && parseInt($.browser.version, 10) === 8) {
+
+    } else {
+
+        $(".orangeCircleTF").knob({
+            'min':0,
+            'max':Math.max(100,$TF$),
+            'readOnly': true,
+            'width': 160,
+            'height': 160,
+            'fgColor': '#ff7252',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+        
+        $(".orangeCircleDA").knob({
+            'min':0,
+            'max':Math.max(100,$DA$),
+            'readOnly': true,
+            'width': 160,
+            'height': 160,
+            'fgColor': '#ff7252',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+        
+        $(".orangeCircleRD").knob({
+            'min':0,
+            'max':Math.max(100,$RD$),
+            'readOnly': true,
+            'width': 160,
+            'height': 160,
+            'fgColor': '#ff7252',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+
+        $(".pinkCircleCF").knob({
+            'min':0,
+            'max':Math.max(100,$CF$),
+            'readOnly': true,
+            'width': 160,
+                    'top':0,
+            'height': 160,
+            'fgColor': '#666666',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+        
+        $(".pinkCirclePA").knob({
+            'min':0,
+            'max':Math.max(100,$PA$),
+            'readOnly': true,
+            'width': 160,
+                    'top':0,
+            'height': 160,
+            'fgColor': '#666666',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+        
+        $(".pinkCircleEBL").knob({
+            'min':0,
+            'max':Math.max(100,$EBL$),
+            'readOnly': true,
+            'width': 160,
+                    'top':0,
+            'height': 160,
+            'fgColor': '#666666',
+            'dynamicDraw': true,
+            'thickness': 0.2,
+            'tickColorizeValues': true,
+                    'skin':'tron'
+        });
+        
+        $.fn.tagcloud.defaults = {
+            size: {start: 10, end: 14, unit: 'pt'},
+            color: {start: '#000', end: '#f52'}
+        };
+
+        $(function () {
+            $('.backlinks span').tagcloud();
+        });
+        
+        $('#link').click(function () {
+            $("html, body").animate({scrollTop: 0}, 600);
+            return false;
+        });
+
+        $.sharedCount = function (url, fn) {
+            url = encodeURIComponent(url || location.href);
+            var domain = "http://free.sharedcount.com/"; /* SET DOMAIN */
+            var apikey = "030104400aace8bdd6cd3970a78b6f845a791d3e" /*API KEY HERE*/
+            var arg = {
+                data: {
+                    url: url,
+                    apikey: apikey
+                },
+                url: domain,
+                cache: true,
+                dataType: "json"
             };
+            if ('withCredentials' in new XMLHttpRequest) {
+                arg.success = fn;
+            } else {
+                var cb = "sc_" + url.replace(/\W/g, '');
+                window[cb] = fn;
+                arg.jsonpCallback = cb;
+                arg.dataType += "p";
+            }
+            return jQuery.ajax(arg);
+        };
 
-            $.sharedCount("http://www.$DOMAINNAME$", function (data) {
-                $("#pins").text(data.Pinterest);
-                $("#lins").text(data.LinkedIn);
-                $("#likes").text(data.Facebook.like_count);
-                $("#plusones").text(data.GooglePlusOne);
-            });
+        $.sharedCount("http://www.$DOMAINNAME$", function (data) {
+            $("#pins").text(data.Pinterest);
+            $("#lins").text(data.LinkedIn);
+            $("#likes").text(data.Facebook.like_count);
+            $("#plusones").text(data.GooglePlusOne);
+        });    
+    }	
+});
+           
         </script>
     </body>
 </html>
