@@ -293,11 +293,11 @@
                         <div class="col-lg-5 col-md-5 col-sm-6 text-center">
                             <h1>BackLinks</h1>
 
-                            <div class="backlinks" style="word-wrap: break-word;">
+                            <div class="backlinks" style="overflow-wrap: break-word; word-wrap:break-word; ">
                                 <script type="text/javascript">
                                     var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
                                     words.forEach(function (word) {                                        
-                                        document.write('<span rel="'+(Math.floor(Math.random() * 11)+2)+'">'+word+'</span>');
+                                        document.write('<span rel="'+(Math.floor(Math.random() * 11)+1)+'">&nbsp;&nbsp;'+word+'&nbsp;&nbsp;</span>');
                                     });
                                 </script>
                             </div>
