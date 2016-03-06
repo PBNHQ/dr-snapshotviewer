@@ -92,7 +92,7 @@ $(document).ready(function(){
         };
 
         $(function () {
-            $('.b-links p').tagcloud();
+            $('.backlinks span').tagcloud();
         });
     }	
 });

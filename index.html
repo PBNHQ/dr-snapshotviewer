@@ -68,12 +68,12 @@
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery-migrate-1.2.1.min.js"></script>
 
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery-ui-1.10.3.custom.min.js"></script>
-        <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.tagcloud.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.knob.modified.min.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.tmpl.min.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.easing.1.3.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.elastislide.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/gallery.js"></script>
+        <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.tagcloud.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/index.js"></script>
         
     </head>
@@ -293,15 +293,13 @@
                         <div class="col-lg-5 col-md-5 col-sm-6 text-center">
                             <h1>BackLinks</h1>
 
-                            <div class="b-links">
-                                <p>
-                                    <script type="text/javascript">
-                                        var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
-                                        words.forEach(function (word) {
-                                            document.write('<p>'+word+'</p>');
-                                        });
-                                    </script>
-                                </p>
+                            <div class="backlinks" style="word-wrap: break-word;">
+                                <script type="text/javascript">
+                                    var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
+                                    words.forEach(function (word) {                                        
+                                        document.write('<span rel="'+(Math.floor(Math.random() * 11)+2)+'">'+word+'</span>');
+                                    });
+                                </script>
                             </div>
                         </div>
 
