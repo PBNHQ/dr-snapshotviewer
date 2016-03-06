@@ -75,7 +75,7 @@
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/gallery.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/jquery.tagcloud.js"></script>
         <script type="text/javascript" src="http://pbnhq.github.io/dr-snapshotviewer/js/index.js"></script>
-        
+
     </head>
 
     <style>
@@ -116,6 +116,9 @@
             margin: auto;
             text-align: center;
         }
+        .paragraph {            
+            padding: 50px 0;
+        }
     </style>
 
     <body>
@@ -146,150 +149,152 @@
         </nav>
 
         <div id="snap">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <h1> Snapshots </h1>
-                        <div class="flow-sec">
-                            <ul class="flow-txt">
-                                <li class="t-flow">Trust Flow : $TF$</li>
-                                <li class="c-flow">Citation Flow : $CF$</li>
-                                <li class="r-flow">Root Domains : $RD$</li>
-                                <li class="c-flow">Backlinks : $EBL$</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <br/>
-            <br/>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <div id="rg-gallery" class="rg-gallery">
-                            <div class="rg-thumbs"></div>           
-                            <div class="es-carousel-wrapper">
-                                <div class="es-nav">
-                                    <span class="es-nav-prev">Previous</span>
-                                    <span class="es-nav-next">Next</span>
-                                </div>
-                                <div class="es-carousel">
-                                    <ul style="padding-left: 0px">
-                                        <script type="text/javascript">
-                        [$SNAPSHOTS$].forEach(function (snapshot) {
-                            document.write('<li><a href="' + snapshot + '"><img src="' + snapshot + '" data-large="' + snapshot + '" alt="$DOMAINNAME$" data-description="$DOMAINNAME$" /></a></li>');
-                        });
-                                        </script>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
-                            <div class="rg-image-wrapper">
-                                    {{if itemsCount > 1}}
-                                            <div class="rg-image-nav">
-                                                    <a href="#" class="rg-image-nav-prev">Previous Image</a>
-                                                    <a href="#" class="rg-image-nav-next">Next Image</a>
-                                            </div>
-                                    {{/if}}
-                                    <div class="rg-image"></div>
-                                    <div class="rg-loading"></div>
-                                    <div class="rg-caption-wrapper">
-                                            <div class="rg-caption" style="display:none;">
-                                                    <p></p>
-                                            </div>
-                                    </div>
-                            </div>
-                         </script>                
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div id="metrix" >
-            <section  data-anchor="metrix">
+            <div class="paragraph">
                 <div class="container">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 text-center">
-                            <h1>Metrics</h1> 
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-
-                            <div class="rt-flow">
-                                <div class="circleStatsItem red">
-                                    <i class="fa  fa-thumbs-up"></i>
-
-                                    <input type="text" value="$TF$" class="orangeCircle" />
-                                </div>
-                                <div class="trst-lag"><h3>Trust Flow</h3></div>
+                            <h1> Snapshots </h1>
+                            <div class="flow-sec">
+                                <ul class="flow-txt">
+                                    <li class="t-flow">Trust Flow : $TF$</li>
+                                    <li class="c-flow">Citation Flow : $CF$</li>
+                                    <li class="r-flow">Root Domains : $RD$</li>
+                                    <li class="c-flow">Backlinks : $EBL$</li>
+                                </ul>
                             </div>
                         </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-                            <div class="rt-flow">
-                                <div class="circleStatsItem red">
-                                    <i class="fa  fa-thumbs-up"></i>
-
-                                    <input type="text" value="$DA$" class="orangeCircle" />
-                                </div>
-                                <div class="trst-lag"><h3>Domain Authority</h3></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-                            <div class="rt-flow">
-                                <div class="circleStatsItem red">
-                                    <i class="fa  fa-thumbs-up"></i>
-
-                                    <input type="text" value="$RD$" class="orangeCircle" />
-                                </div>
-                                <div class="trst-lag"><h3>Root Domains</h3></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-
-                            <div class="ct-flow">
-                                <div class="circleStatsItem pink">
-                                    <i class="fa  fa-globe"></i>
-
-                                    <input type="text" value="$CF$" class="pinkCircle" />
-                                </div>
-                                <div class="trst-lag-second"><h3>Citation Flow</h3></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-                            <div class="ct-flow">
-                                <div class="circleStatsItem pink">
-                                    <i class="fa  fa-globe"></i>
-
-                                    <input type="text" value="$PA$" class="pinkCircle" />
-                                </div>
-                                <div class="trst-lag-second"><h3>Page Authority</h3></div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
-                            <div class="ct-flow">
-                                <div class="circleStatsItem grey">
-                                    <i class="fa  fa-globe"></i>
-
-                                    <input type="text" value="$EBL$" class="pinkCircle" />
-                                </div>
-                                <div class="trst-lag-second"><h3>Backlinks</h3></div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 text-center">
+                            <div id="rg-gallery" class="rg-gallery">
+                                <div class="rg-thumbs"></div>           
+                                <div class="es-carousel-wrapper">
+                                    <div class="es-nav">
+                                        <span class="es-nav-prev">Previous</span>
+                                        <span class="es-nav-next">Next</span>
+                                    </div>
+                                    <div class="es-carousel">
+                                        <ul style="padding-left: 0px">
+                                            <script type="text/javascript">
+                [$SNAPSHOTS$].forEach(function (snapshot) {
+                    document.write('<li><a href="' + snapshot + '"><img src="' + snapshot + '" data-large="' + snapshot + '" alt="$DOMAINNAME$" data-description="$DOMAINNAME$" /></a></li>');
+                });
+                                            </script>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+                                <div class="rg-image-wrapper">
+                                {{if itemsCount > 1}}
+                                <div class="rg-image-nav">
+                                <a href="#" class="rg-image-nav-prev">Previous Image</a>
+                                <a href="#" class="rg-image-nav-next">Next Image</a>
+                                </div>
+                                {{/if}}
+                                <div class="rg-image"></div>
+                                <div class="rg-loading"></div>
+                                <div class="rg-caption-wrapper">
+                                <div class="rg-caption" style="display:none;">
+                                <p></p>
+                                </div>
+                                </div>
+                                </div>
+                            </script>                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="metrix">
+            <div class="paragraph">
+                <section  data-anchor="metrix">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 text-center">
+                                <h1>Metrics</h1> 
+                            </div>
+                        </div>
 
-            </section>
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+
+                                <div class="rt-flow">
+                                    <div class="circleStatsItem red">
+                                        <i class="fa  fa-thumbs-up"></i>
+
+                                        <input type="text" value="$TF$" class="orangeCircle" />
+                                    </div>
+                                    <div class="trst-lag"><h3>Trust Flow</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+                                <div class="rt-flow">
+                                    <div class="circleStatsItem red">
+                                        <i class="fa  fa-thumbs-up"></i>
+
+                                        <input type="text" value="$DA$" class="orangeCircle" />
+                                    </div>
+                                    <div class="trst-lag"><h3>Domain Authority</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+                                <div class="rt-flow">
+                                    <div class="circleStatsItem red">
+                                        <i class="fa  fa-thumbs-up"></i>
+
+                                        <input type="text" value="$RD$" class="orangeCircle" />
+                                    </div>
+                                    <div class="trst-lag"><h3>Root Domains</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+
+                                <div class="ct-flow">
+                                    <div class="circleStatsItem pink">
+                                        <i class="fa  fa-globe"></i>
+
+                                        <input type="text" value="$CF$" class="pinkCircle" />
+                                    </div>
+                                    <div class="trst-lag-second"><h3>Citation Flow</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+                                <div class="ct-flow">
+                                    <div class="circleStatsItem pink">
+                                        <i class="fa  fa-globe"></i>
+
+                                        <input type="text" value="$PA$" class="pinkCircle" />
+                                    </div>
+                                    <div class="trst-lag-second"><h3>Page Authority</h3></div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 top-space">
+                                <div class="ct-flow">
+                                    <div class="circleStatsItem grey">
+                                        <i class="fa  fa-globe"></i>
+
+                                        <input type="text" value="$EBL$" class="pinkCircle" />
+                                    </div>
+                                    <div class="trst-lag-second"><h3>Backlinks</h3></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+            </div>
         </div>
 
-        <div id="backlinks" >
+        <div id="backlinks" class="paragraph">
             <section  class="backlinks">
 
                 <div class="container">
@@ -299,9 +304,11 @@
 
                             <div class="backlinks" style="overflow-wrap: break-word; word-wrap:break-word; padding:10px;">
                                 <script type="text/javascript">
-                                    var words = '$LINKS$'.split(/,| /).filter(function(n){ return n != undefined });
-                                    words.forEach(function (word) {                                        
-                                        document.write('<span rel="'+(Math.floor(Math.random() * 11)+1)+'">&nbsp;&nbsp;'+word+'&nbsp;&nbsp;</span>');
+                                    var words = '$LINKS$'.split(/,| /).filter(function (n) {
+                                        return n != undefined
+                                    });
+                                    words.forEach(function (word) {
+                                        document.write('<span rel="' + (Math.floor(Math.random() * 11) + 1) + '">&nbsp;&nbsp;' + word + '&nbsp;&nbsp;</span>');
                                     });
                                 </script>
                             </div>
@@ -322,28 +329,25 @@
                                 </p>
                             </div>
                         </div>
-
-                        </section>
-
-                        <section id="external-profile" data-anchor="external-profile">
-
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 text-center">
-                                        <h1>External Backlinks Profile</h1>
-                                        <img alt="Backlink Profile" class="img-responsive center-block top-space" src="https://majestic.com/charts/linkprofile/3/?threshold=&amp;target=$STRONGEST$&amp;datatype=0&amp;IndexDataSource=F&amp;wildcard=1" />
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-
-
-
                     </div>
                 </div>
+
+            </section>
+
+            <section id="external-profile" data-anchor="external-profile">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 text-center">
+                            <h1>External Backlinks Profile</h1>
+                            <img alt="Backlink Profile" class="img-responsive center-block top-space" src="https://majestic.com/charts/linkprofile/3/?threshold=&amp;target=$STRONGEST$&amp;datatype=0&amp;IndexDataSource=F&amp;wildcard=1" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
         </div>
-        <div id="graph" >
+        <div id="graph" class="paragraph">
             <section class="graph"  >
                 <div class="container">
                     <div class="row">
