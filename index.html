@@ -408,7 +408,7 @@
             </section>
         </div>
         
-        <footer id="footer" class="site-footer" style="margin: 0 0 0 0;">
+        <footer data-role="footer" data-position="fixed" style="margin: 0 0 0 0; position: fixed; bottom: 0; left: 0; right: 0; height: 40px;">
             <img src="https://www.domainronin.com/wp-content/uploads/2015/04/domain-ronin-icon.png" height="25px" width="25px" />
             Report generated with <b><a hred="http://www.domainronin.com">Domain Ronin</a></b>
             <div class="top"><a  id="link"><img src="http://pbnhq.github.io/dr-snapshotviewer/images/arrow-top.png" class="arrow-top" /><br/>TOP</a></div>
@@ -549,41 +549,8 @@ $(document).ready(function(){
             $("#likes").text(data.Facebook.like_count);
             $("#plusones").text(data.GooglePlusOne);
         });    
-        
-        $(window).bind("load", function() { 
-
-            var footerHeight = 0,
-                footerTop = 0,
-                $footer = $("#footer");
-
-            positionFooter();
-
-            function positionFooter() {
-
-                footerHeight = $footer.height();
-                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
-
-                if ( ($(document.body).height()+footerHeight) < $(window).height()) {
-                    $footer.css({
-                         position: "absolute"
-                    }).animate({
-                         top: footerTop
-                    })
-                } else {
-                    $footer.css({
-                         position: "static"
-                    })
-                }
-            }
-
-            $(window)
-                    .scroll(positionFooter)
-                    .resize(positionFooter)
-
-        });
-    }	
-});
-           
+    }
+});                 
         </script>
     </body>
 </html>
