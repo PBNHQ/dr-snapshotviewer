@@ -103,7 +103,7 @@
         #footer { 
             height: 50px; 
         }
-        li.lin_a {
+        .lin_a {
             text-shadow: none;
             color: #fff;
             font-size: 18px;
@@ -141,15 +141,20 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="menu-center">
-                    <ul class="nav navbar-nav">                                            
-                        <li class="lin_a">$DOMAINNAME$</li>
-                        <li ><a href="#snap" class="active">Snapshots<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#metrix">Metrics</a></li>
-                        <li><a href="#backlinks">BackLinks and WayBacks</a></li>
-                        <li><a href="#graph">Other</a></li>
-                    </ul>
-
+                <div class="collapse navbar-collapse" id="menu-center" style="width:100%">
+                    <div style="width:50%">
+                        <span class="lin_a" style="float:left">$DOMAINNAME$</span>
+                    </div>
+                    <div style="max-width:720px;margin: 0 auto;">
+                        <ul class="nav navbar-nav" style="max-width:720px;">
+                            <li><a href="#snap" class="active">Snapshots<span class="sr-only">(current)</span></a></li>
+                            <li><a href="#metrix">Metrics</a></li>
+                            <li><a href="#backlinks">BackLinks and WayBacks</a></li>
+                            <li><a href="#graph">Other</a></li>
+                        </ul>
+                    </div>
+                    <div style="width:50%">
+                    </div>
                 </div><!-- /.navbar-collapse -->
             </div><!-- /.container-fluid -->
         </nav>
