@@ -410,7 +410,7 @@
 			
 			this.current = idx;
 			
-			var ml		= Math.abs( parseFloat( this.$slider.css('margin-left') ) ),
+			var ml		= Math.abs( $('.es-carousel').scrollLeft() ),
 				posR	= ml + this.visibleWidth,
 				fml		= Math.abs( this.current * this.itemW );
 			
