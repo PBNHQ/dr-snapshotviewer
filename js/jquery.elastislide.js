@@ -372,7 +372,7 @@
 			$.fn.applyStyle = ( anim === undefined ) ? $.fn.animate : $.fn.css;
                         console.log(ml+" -> "+val);
                         $('.es-carousel').animate({
-                            scrollLeft: '-='+(md-val)
+                            scrollLeft: '-='+(ml-val)
                         }, 1000, 'easeOutQuad');
 			
 			var sliderCSS	= {};
