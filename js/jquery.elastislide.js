@@ -370,6 +370,7 @@
 			}
 			
 			$.fn.applyStyle = ( anim === undefined ) ? $.fn.animate : $.fn.css;
+                        console.log(val);
                         $('.es-carousel').animate({
                             scrollLeft: '-='+val
                         }, 1000, 'easeOutQuad');
