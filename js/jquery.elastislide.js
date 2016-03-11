@@ -210,6 +210,7 @@
 		_toggleControls		: function( dir, status ) {
 			
 			// show / hide navigation buttons
+                        /*
 			if( dir && status ) {
 				if( status === 1 )
 					( dir === 'right' ) ? this.$navNext.show() : this.$navPrev.show();
@@ -218,6 +219,7 @@
 			}
 			else if( this.current === this.itemsCount - 1 || this.fitCount >= this.itemsCount )
 					this.$navNext.hide();
+                    */
 			
 		},
 		_initEvents			: function() {
@@ -238,13 +240,14 @@
 			});
 			
 			// navigation buttons events
+                        /*
 			this.$navNext.on('click.elastislide', function( event ) {
 				instance._slide('right');
 			});
 			
 			this.$navPrev.on('click.elastislide', function( event ) {
 				instance._slide('left');
-			});
+			});*/
 			
 			// item click event
 			this.$slider.on('click.elastislide', 'li', function( event ) {
