@@ -197,11 +197,11 @@
 		},
 		_addControls		: function() {
 			
-			this.$navNext	= $('<span class="es-nav-next">Next</span>');
-			this.$navPrev	= $('<span class="es-nav-prev">Previous</span>');
+//			this.$navNext	= $('<span class="es-nav-next">Next</span>');
+//			this.$navPrev	= $('<span class="es-nav-prev">Previous</span>');
 			$('<div class="es-nav"/>')
-			.append( this.$navPrev )
-			.append( this.$navNext )
+//			.append( this.$navPrev )
+//			.append( this.$navNext )
 			.appendTo( this.$el );
 			
 			//this._toggleControls();
