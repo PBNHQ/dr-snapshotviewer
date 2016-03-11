@@ -301,7 +301,7 @@
 				//return false;
 			
 			// current margin left
-			var ml		= $('.es-carousel').scrollLeft();
+			var ml		= $('.es-carousel').scrollLeft()+this.itemW;
 			
 			// val is just passed when we want an exact value for the margin left (used in the _slideToCurrent function)
 			if( val === undefined ) {
@@ -373,9 +373,8 @@
 			}
 			
 			$.fn.applyStyle = ( anim === undefined ) ? $.fn.animate : $.fn.css;
-                        console.log(ml+" -> "+val);
                         $('.es-carousel').animate({
-                            scrollLeft: '-='+(val+ml+this.itemW)
+                            scrollLeft: '-='+(val+ml)
                         }, 1000, 'easeOutQuad');
 			
 			var sliderCSS	= {};
@@ -413,7 +412,7 @@
 			
 			this.current = idx;
 			
-			var ml		= Math.abs( $('.es-carousel').scrollLeft() ),
+			var ml		= Math.abs( $('.es-carousel').scrollLeft()+this.itemW ),
 				posR	= ml + this.visibleWidth,
 				fml		= Math.abs( this.current * this.itemW );
 			
