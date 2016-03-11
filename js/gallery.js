@@ -58,7 +58,7 @@ $(function() {
 	
 	Gallery				= (function() {
 			// index of the current item
-		var current			= 0, 
+		var current			= 1, 
 			// mode : carousel || fullview
 			mode 			= 'carousel',
 			// control if one image is being loaded
