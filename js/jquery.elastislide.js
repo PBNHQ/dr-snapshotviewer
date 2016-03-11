@@ -298,7 +298,7 @@
 				//return false;
 			
 			// current margin left
-			var ml		= parseFloat( this.$slider.css('margin-left') );
+			var ml		= $('.es-carousel').scrollLeft();
 			
 			// val is just passed when we want an exact value for the margin left (used in the _slideToCurrent function)
 			if( val === undefined ) {
