@@ -373,14 +373,14 @@
                         $('.es-carousel').animate({
                             scrollLeft: '-='+val
                         }, 1000, 'easeOutQuad');
-			/*
-			var sliderCSS	= { marginLeft : val };
+			
+			var sliderCSS	= {};
 			
 			var instance	= this;
 			
 			this.$slider.stop().applyStyle( sliderCSS, $.extend( true, [], { duration : this.options.speed, easing : this.options.easing, complete : function() {
 				if( callback ) callback.call();
-			} } ) );*/
+			} } ) );
 			
 		},
 		_slideToCurrent		: function( anim ) {
