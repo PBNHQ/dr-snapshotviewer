@@ -198,7 +198,7 @@ $(function() {
 						--current;
 				}
 				
-				_showImage( $items.eq( current ) );
+				_showImage( $items.eq( current-1 ) );
 				
 			},
 			_showImage		= function( $item ) {
